@@ -31,31 +31,43 @@ public class Main {
 
         * */
 
-
+        /*
         int[] arrayT = new int[] {2,3,4,6,7,9,0,2,5,7,8,0};
-        for (int number : arrayT) { /* number - это не счетчик, это элемент массива */
-            number *= 2; /* каждый элемент массива удваиваем */
+        for (int number : arrayT) { // number - это не счетчик, это переменная с каждым элементом массива
+            number *= 2; // каждый элемент массива удваиваем
             System.out.println(number);
         }
-
+        */
         // System.out.println(Arrays.tpString(arrayT).replace(target: "[",replacement: "" ).replace (target: "]", replacement: ""));
 
-        /* Д/з массивы2*/
-
-
         int[] array = arrayRandom(30);
-        /* Найдем сумму расходов */
+        // Выведем получившийся массив
+
+        System.out.println(Arrays.toString(array));
+
+
+        /* Задание 1. Найдем сумму расходов */
         int sum = 0;
         for ( int number : array) {
             sum += number;
         }
-        System.out.println(sum);
+        System.out.println( "Задание 1.Сумма трат за месяц составила " + sum + "… рублей");
+        /*
+        ### Задание 2
+
+        Следующая задача — найти минимальную и максимальную трату за день.
+
+        Нужно написать программу, которая решит эту задачу, и вывести в консоль результат
+
+        в формате: «Минимальная сумма трат за день составила … рублей. Максимальная сумма трат за день составила … рублей».
+        * */
 
         /* Найдем max и min расход 1 способ */
 
         Arrays.sort(array); /* сортируем по возрастанию */
 
-        System.out.printf("Минимальный расход в течении месяца = %d, максимальный расход = %d \n ", array[0],array[array.length-1]);
+        System.out.printf("Задание 2. Метод 1. Минимальный расход в течении месяца = %d, максимальный расход = %d \n ", array[0],array[array.length-1]);
+
 
         /* Найдем max и min расход 2 способ */
 
@@ -69,7 +81,8 @@ public class Main {
                 max = array[i];
             }
         }
-
+        System.out.printf("Задание 2. Метод 2. Минимальный расход в течении месяца = %d, максимальный расход = %d \n ", min,max);
+        // Задание 3.
         System.out.printf("Средний расход за месяц составил: %.2f \n", (double) sum/array.length) ;
 
         /* Вывести Иван Иванович Иванов в обратном порядке */
