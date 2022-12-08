@@ -83,19 +83,37 @@ public class Main {
         }
         System.out.printf("Задание 2. Метод 2. Минимальный расход в течении месяца = %d, максимальный расход = %d \n ", min,max);
         // Задание 3.
+        /*
+        ### Задание 3
+
+        А теперь нам нужно понять, какую в среднем сумму наша компания тратила в течение данных 30 дней.
+
+        Нужно написать программу, которая посчитает среднее значение трат за месяц (то есть сумму всех трат за месяц поделить на количество дней), и вывести в консоль результат в формате: «Средняя сумма трат за месяц составила … рублей».
+
+        **Важно помнить:** подсчет среднего значения может иметь остаток (то есть быть не целым, а дробным числом).*
+        */
+
         System.out.printf("Средний расход за месяц составил: %.2f \n", (double) sum/array.length) ;
 
         /* Вывести Иван Иванович Иванов в обратном порядке */
 
-        String string = "Иван Иванович Иванов";
+        String string = "вонавИ чивонавИ навИ";
         char[] stringToChar = string.toCharArray();
+
+        System.out.println("Задание 4. Было : " + string);
         System.out.println(Arrays.toString(stringToChar));
+        System.out.print("Задание 4. Стало: ");
         for (int i = stringToChar.length - 1 ; i >= 0 ; i-- ) {
             System.out.print(stringToChar[i]);
         }
 
+        System.out.println("\nПосмотрим на 2-хмерные массивы : " );
         /* двухмерные массивы */
-        int[][] array2 = new int[10][15];
+        int lengthY = 16 ;
+        int lengthX = 18 ;
+
+        int[][] array2 = new int[lengthY][lengthX];
+        /*
         Random random = new Random();
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 15; j++) {
@@ -103,7 +121,12 @@ public class Main {
             }
             System.out.println(Arrays.toString(array2[i]));
         }
-
+        */
+        for (int i = 0; i < lengthY; i++) {
+            array2[i] = arrayRandom(lengthX);
+            System.out.println(Arrays.toString(array2[i]));
+        }
+        // System.out.println("\n\n" + Arrays.toString(array2));
 
     }
     public static int[] arrayRandom(int length) {
